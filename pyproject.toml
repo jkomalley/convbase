@@ -8,7 +8,6 @@ dynamic = ["version"]
 description = 'Base conversion command line utility.'
 readme = "README.md"
 requires-python = ">=3.8"
-license = { file = "LICENSE" }
 keywords = []
 authors = [
   { name = "Kyle O'Malley", email = "j.kyle.omalley@gmail.com" },
