@@ -31,7 +31,7 @@ jobs:
         mypy src/ test/
     - name: Lint with ruff
       run: |
-        ruff check --fix
+        ruff check --fix --output-format=github
     - name: Format with ruff
       run: |
         ruff format
