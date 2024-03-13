@@ -28,7 +28,7 @@ jobs:
         python -m pip install -e .
     - name: Run mypy
       run: |
-        mypy ./src/ ./tests/
+        mypy src/ tests/
     - name: Lint with ruff
       run: |
         ruff check --fix
