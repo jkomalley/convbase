@@ -39,6 +39,9 @@ dectohex = "convbase.convbase:dectohex"
 dectooct = "convbase.convbase:dectooct"
 dectobin = "convbase.convbase:dectobin"
 
+octtohex = "convbase.convbase:octtohex"
+octtodec = "convbase.convbase:octtodec"
+octtobin = "convbase.convbase:octtobin"
 
 [tool.setuptools.dynamic]
 version = {attr = "convbase.__version__"}

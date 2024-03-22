@@ -87,19 +87,37 @@ def dectobin(value):
 @click.argument("value")
 @version_option
 def octtohex(value):
-    pass
+    try:
+        dec_value = int(value, OCTBASE)
+    except ValueError:
+        click.echo("Error: not octal value")
+        exit(1)
+    else:
+        print(hex(dec_value))
 
 @click.command()
 @click.argument("value")
 @version_option
 def octtodec(value):
-    pass
+    try:
+        dec_value = int(value, OCTBASE)
+    except ValueError:
+        click.echo("Error: not octal value")
+        exit(1)
+    else:
+        print(dec_value)
 
 @click.command()
 @click.argument("value")
 @version_option
 def octtobin(value):
-    pass
+    try:
+        dec_value = int(value, OCTBASE)
+    except ValueError:
+        click.echo("Error: not octal value")
+        exit(1)
+    else:
+        print(bin(dec_value))
 
 @click.command()
 @click.argument("value")
