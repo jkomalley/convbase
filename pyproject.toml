@@ -43,6 +43,10 @@ octtohex = "convbase.convbase:octtohex"
 octtodec = "convbase.convbase:octtodec"
 octtobin = "convbase.convbase:octtobin"
 
+bintohex = "convbase.convbase:bintohex"
+bintodec = "convbase.convbase:bintodec"
+bintooct = "convbase.convbase:bintooct"
+
 [tool.setuptools.dynamic]
 version = {attr = "convbase.__version__"}
 

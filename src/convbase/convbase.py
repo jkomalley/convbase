@@ -123,16 +123,34 @@ def octtobin(value):
 @click.argument("value")
 @version_option
 def bintohex(value):
-    pass
+    try:
+        dec_value = int(value, BINBASE)
+    except ValueError:
+        click.echo("Error: not binary value")
+        exit(1)
+    else:
+        print(hex(dec_value))
 
 @click.command()
 @click.argument("value")
 @version_option
 def bintodec(value):
-    pass
+    try:
+        dec_value = int(value, BINBASE)
+    except ValueError:
+        click.echo("Error: not binary value")
+        exit(1)
+    else:
+        print(dec_value)
 
 @click.command()
 @click.argument("value")
 @version_option
 def bintooct(value):
-    pass
+    try:
+        dec_value = int(value, BINBASE)
+    except ValueError:
+        click.echo("Error: not binary value")
+        exit(1)
+    else:
+        print(oct(dec_value))
