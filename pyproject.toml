@@ -30,20 +30,10 @@ Documentation = "https://github.com/jkomalley/convbase#readme"
 Issues = "https://github.com/jkomalley/convbase/issues"
 Source = "https://github.com/jkomalley/convbase"
 
-[project.optional-dependencies]
-dev = [
-  "pytest",
-  "ruff",
-  "mypy",
-  "pre-commit",
-]
-publish = [
-  "twine",
-  "build"
-]
-
 [project.scripts]
-convbase = "convbase.convbase:run"
+hextodec = "convbase.convbase:hextodec"
+hextooct = "convbase.convbase:hextooct"
+hextobin = "convbase.convbase:hextobin"
 
 [tool.setuptools.dynamic]
 version = {attr = "convbase.__version__"}
