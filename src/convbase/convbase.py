@@ -50,53 +50,71 @@ def hextobin(value):
 @click.command()
 @click.argument("value")
 @version_option
-def dectohex():
+def dectohex(value):
+    try:
+        dec_value = int(value, DECBASE)
+    except ValueError:
+        click.echo("Error: not decimal value")
+        exit(1)
+    else:
+        print(hex(dec_value))
+
+@click.command()
+@click.argument("value")
+@version_option
+def dectooct(value):
+    try:
+        dec_value = int(value, DECBASE)
+    except ValueError:
+        click.echo("Error: not decimal value")
+        exit(1)
+    else:
+        print(oct(dec_value))
+
+@click.command()
+@click.argument("value")
+@version_option
+def dectobin(value):
+    try:
+        dec_value = int(value, DECBASE)
+    except ValueError:
+        click.echo("Error: not decimal value")
+        exit(1)
+    else:
+        print(bin(dec_value))
+
+@click.command()
+@click.argument("value")
+@version_option
+def octtohex(value):
     pass
 
 @click.command()
 @click.argument("value")
 @version_option
-def dectooct():
+def octtodec(value):
     pass
 
 @click.command()
 @click.argument("value")
 @version_option
-def dectobin():
+def octtobin(value):
     pass
 
 @click.command()
 @click.argument("value")
 @version_option
-def octtohex():
+def bintohex(value):
     pass
 
 @click.command()
 @click.argument("value")
 @version_option
-def octtodec():
+def bintodec(value):
     pass
 
 @click.command()
 @click.argument("value")
 @version_option
-def octtobin():
-    pass
-
-@click.command()
-@click.argument("value")
-@version_option
-def bintohex():
-    pass
-
-@click.command()
-@click.argument("value")
-@version_option
-def bintodec():
-    pass
-
-@click.command()
-@click.argument("value")
-@version_option
-def bintooct():
+def bintooct(value):
     pass
