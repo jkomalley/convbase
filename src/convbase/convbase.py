@@ -11,6 +11,7 @@ DECBASE = 10
 OCTBASE = 8
 BINBASE = 2
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -22,6 +23,7 @@ def hextodec(value):
         exit(1)
     else:
         print(dec_value)
+
 
 @click.command()
 @click.argument("value")
@@ -35,6 +37,7 @@ def hextooct(value):
     else:
         print(oct(dec_value))
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -46,6 +49,7 @@ def hextobin(value):
         exit(1)
     else:
         print(bin(dec_value))
+
 
 @click.command()
 @click.argument("value")
@@ -59,6 +63,7 @@ def dectohex(value):
     else:
         print(hex(dec_value))
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -70,6 +75,7 @@ def dectooct(value):
         exit(1)
     else:
         print(oct(dec_value))
+
 
 @click.command()
 @click.argument("value")
@@ -83,6 +89,7 @@ def dectobin(value):
     else:
         print(bin(dec_value))
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -94,6 +101,7 @@ def octtohex(value):
         exit(1)
     else:
         print(hex(dec_value))
+
 
 @click.command()
 @click.argument("value")
@@ -107,6 +115,7 @@ def octtodec(value):
     else:
         print(dec_value)
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -118,6 +127,7 @@ def octtobin(value):
         exit(1)
     else:
         print(bin(dec_value))
+
 
 @click.command()
 @click.argument("value")
@@ -131,6 +141,7 @@ def bintohex(value):
     else:
         print(hex(dec_value))
 
+
 @click.command()
 @click.argument("value")
 @version_option
@@ -142,6 +153,7 @@ def bintodec(value):
         exit(1)
     else:
         print(dec_value)
+
 
 @click.command()
 @click.argument("value")
