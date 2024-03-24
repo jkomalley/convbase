@@ -7,7 +7,7 @@ name = "convbase"
 dynamic = ["version"]
 description = 'Base conversion command line utility.'
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 keywords = []
 authors = [
   { name = "Kyle O'Malley", email = "j.kyle.omalley@gmail.com" },
@@ -16,8 +16,6 @@ classifiers = [
   "Development Status :: 1 - Planning",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
@@ -32,20 +30,22 @@ Documentation = "https://github.com/jkomalley/convbase#readme"
 Issues = "https://github.com/jkomalley/convbase/issues"
 Source = "https://github.com/jkomalley/convbase"
 
-[project.optional-dependencies]
-dev = [
-  "pytest",
-  "ruff",
-  "mypy",
-  "pre-commit",
-]
-publish = [
-  "twine",
-  "build"
-]
-
 [project.scripts]
-convbase = "convbase.convbase:run"
+hextodec = "convbase.convbase:hextodec"
+hextooct = "convbase.convbase:hextooct"
+hextobin = "convbase.convbase:hextobin"
+
+dectohex = "convbase.convbase:dectohex"
+dectooct = "convbase.convbase:dectooct"
+dectobin = "convbase.convbase:dectobin"
+
+octtohex = "convbase.convbase:octtohex"
+octtodec = "convbase.convbase:octtodec"
+octtobin = "convbase.convbase:octtobin"
+
+bintohex = "convbase.convbase:bintohex"
+bintodec = "convbase.convbase:bintodec"
+bintooct = "convbase.convbase:bintooct"
 
 [tool.setuptools.dynamic]
 version = {attr = "convbase.__version__"}
@@ -58,6 +58,6 @@ line-ending = "lf"
 skip-magic-trailing-comma = true
 
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
