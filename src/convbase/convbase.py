@@ -16,6 +16,7 @@ BINBASE = 2
 @click.argument("value")
 @version_option
 def hextodec(value):
+    """Convert a hexadecimal value to decimal."""
     try:
         dec_value = int(value, HEXBASE)
     except ValueError:
@@ -29,6 +30,7 @@ def hextodec(value):
 @click.argument("value")
 @version_option
 def hextooct(value):
+    """Convert a hexadecimal value to octal."""
     try:
         dec_value = int(value, HEXBASE)
     except ValueError:
@@ -42,6 +44,7 @@ def hextooct(value):
 @click.argument("value")
 @version_option
 def hextobin(value):
+    """Convert a hexadecimal value to binary."""
     try:
         dec_value = int(value, HEXBASE)
     except ValueError:
@@ -55,6 +58,7 @@ def hextobin(value):
 @click.argument("value")
 @version_option
 def dectohex(value):
+    """Convert a decimal value to hexadecimal."""
     try:
         dec_value = int(value, DECBASE)
     except ValueError:
@@ -68,6 +72,7 @@ def dectohex(value):
 @click.argument("value")
 @version_option
 def dectooct(value):
+    """Convert a decimal value to octal."""
     try:
         dec_value = int(value, DECBASE)
     except ValueError:
@@ -81,6 +86,7 @@ def dectooct(value):
 @click.argument("value")
 @version_option
 def dectobin(value):
+    """Convert a decimal value to binary."""
     try:
         dec_value = int(value, DECBASE)
     except ValueError:
@@ -94,6 +100,7 @@ def dectobin(value):
 @click.argument("value")
 @version_option
 def octtohex(value):
+    """Convert an octal value to hexadecimal."""
     try:
         dec_value = int(value, OCTBASE)
     except ValueError:
@@ -107,6 +114,7 @@ def octtohex(value):
 @click.argument("value")
 @version_option
 def octtodec(value):
+    """Convert an octal value to decimal."""
     try:
         dec_value = int(value, OCTBASE)
     except ValueError:
@@ -120,6 +128,7 @@ def octtodec(value):
 @click.argument("value")
 @version_option
 def octtobin(value):
+    """Convert an octal value to binary."""
     try:
         dec_value = int(value, OCTBASE)
     except ValueError:
@@ -133,6 +142,7 @@ def octtobin(value):
 @click.argument("value")
 @version_option
 def bintohex(value):
+    """Convert a binary value to hexadecimal."""
     try:
         dec_value = int(value, BINBASE)
     except ValueError:
@@ -146,6 +156,7 @@ def bintohex(value):
 @click.argument("value")
 @version_option
 def bintodec(value):
+    """Convert a binnary value to decimal."""
     try:
         dec_value = int(value, BINBASE)
     except ValueError:
@@ -159,6 +170,7 @@ def bintodec(value):
 @click.argument("value")
 @version_option
 def bintooct(value):
+    """Convert a binary value to octal."""
     try:
         dec_value = int(value, BINBASE)
     except ValueError:
