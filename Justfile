@@ -16,5 +16,9 @@ lint:
 test:
     uv run pytest --cov=src/convbase --cov-branch -q
 
+# Run type checker
+type:
+    uv run ty check --error-on-warning
+
 # Run all checks
-all: lint test
+all: lint type test
