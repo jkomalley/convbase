@@ -1,6 +1,6 @@
 [project]
 name = "convbase"
-version = "0.1.0"
+version = "0.2.0"
 description = 'Base conversion command line utility.'
 readme = "README.md"
 requires-python = ">=3.10"
@@ -33,8 +33,6 @@ oct = "convbase.cli:oct"
 dec = "convbase.cli:dec"
 hex = "convbase.cli:hex"
 
-[tool.setuptools.dynamic]
-version = { attr = "convbase.__version__" }
 
 [tool.ruff]
 fix = true
