@@ -62,4 +62,4 @@ jobs:
         run: uv sync
 
       - name: Test with pytest
-        run: uv run pytest --cov=src/convbase --cov-branch
+        run: uv run pytest

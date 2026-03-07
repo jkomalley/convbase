@@ -4,25 +4,32 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/convbase)
 ![PyPI - License](https://img.shields.io/pypi/l/convbase)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/convbase)
-[![Actions status](https://github.com/jkomalley/convbase/workflows/CI/badge.svg)](https://github.com/jkomalley/convbase/actions)
+[![CI](https://github.com/jkomalley/convbase/workflows/CI/badge.svg)](https://github.com/jkomalley/convbase/actions)
 
-Base conversion command line utility.
+A command-line utility for converting integers between binary, octal, decimal, and hexadecimal bases.
 
 ## Installation
 
-You can install `convbase` using `uv` or `pip`:
-
 ```bash
-uv pip install convbase
-# or
 pip install convbase
 ```
 
-## Usage
+Or with `uv`:
 
-`convbase` provides four command-line tools for quick base conversions:
+```bash
+uv tool install convbase
+```
 
-### Input formats
+## Commands
+
+| Command | Output base |
+|---------|-------------|
+| `bin`   | Binary (`0b`) |
+| `oct`   | Octal (`0o`) |
+| `dec`   | Decimal |
+| `hex`   | Hexadecimal (`0x`) |
+
+## Input formats
 
 All commands accept `VALUE` in any of the following formats:
 
@@ -33,7 +40,31 @@ All commands accept `VALUE` in any of the following formats:
 | Octal | `0o` | `0o12` |
 | Hexadecimal | `0x` | `0xA` |
 
-### Error handling
+## Examples
+
+```bash
+$ bin 10
+0b1010
+$ bin 0xFF
+0b11111111
+
+$ oct 0b1010
+0o12
+$ oct 0xA
+0o12
+
+$ dec 0b1010
+10
+$ dec 0xFF
+255
+
+$ hex 10
+0xa
+$ hex 0b11111111
+0xff
+```
+
+## Error handling
 
 Passing a value that cannot be parsed as an integer exits with a non-zero status and prints an error:
 
@@ -42,46 +73,15 @@ $ bin hello
 Error: Invalid value for 'VALUE': invalid integer: 'hello'
 ```
 
-### `bin` - Convert to Binary
-
-Converts a value to binary.
+## Development
 
 ```bash
-$ bin 10
-0b1010
-$ bin 0xFF
-0b11111111
+git clone https://github.com/jkomalley/convbase
+cd convbase
+just setup
+just all       # lint, type-check, and test
 ```
 
-### `oct` - Convert to Octal
+## License
 
-Converts a value to octal.
-
-```bash
-$ oct 10
-0o12
-$ oct 0b1010
-0o12
-```
-
-### `dec` - Convert to Decimal
-
-Converts a value to decimal.
-
-```bash
-$ dec 0b1010
-10
-$ dec 0xFF
-255
-```
-
-### `hex` - Convert to Hexadecimal
-
-Converts a value to hexadecimal.
-
-```bash
-$ hex 10
-0xa
-$ hex 0b1111
-0xf
-```
+MIT

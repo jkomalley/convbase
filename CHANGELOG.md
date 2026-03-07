@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2026-03-06
+
+### Added
+- `--version` flag on all four CLI commands.
+- Accepted input formats and error behavior documented in README.
+- `[tool.pytest.ini_options]` in `pyproject.toml` with `--cov-fail-under=100` to enforce 100% coverage in CI.
+
+### Changed
+- Improved `--help` text for all commands to document accepted input prefixes (`0b`, `0o`, `0x`, decimal).
+- Updated Development Status classifier to `5 - Production/Stable`.
+- `Justfile` `setup` recipe updated from `uv pip install -e .[dev]` to `uv sync`.
+- CI pytest step simplified — flags now managed via `pyproject.toml`.
+- Updated `pre-commit-hooks` from `v4.5.0` to `v6.0.0`.
+- Updated `ruff-pre-commit` from `v0.3.4` to `v0.15.5`.
+
+### Removed
+- Dead `mirrors-mypy` pre-commit hook (CI uses `ty`).
+
 ## [0.2.2] - 2026-03-06
 
 ### Changed
