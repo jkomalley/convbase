@@ -22,9 +22,29 @@ pip install convbase
 
 `convbase` provides four command-line tools for quick base conversions:
 
+### Input formats
+
+All commands accept `VALUE` in any of the following formats:
+
+| Format | Prefix | Example |
+|--------|--------|---------|
+| Decimal | _(none)_ | `10` |
+| Binary | `0b` | `0b1010` |
+| Octal | `0o` | `0o12` |
+| Hexadecimal | `0x` | `0xA` |
+
+### Error handling
+
+Passing a value that cannot be parsed as an integer exits with a non-zero status and prints an error:
+
+```bash
+$ bin hello
+Error: Invalid value for 'VALUE': invalid integer: 'hello'
+```
+
 ### `bin` - Convert to Binary
 
-Converts a decimal, octal (prefix `0o`), or hexadecimal (prefix `0x`) value to binary.
+Converts a value to binary.
 
 ```bash
 $ bin 10

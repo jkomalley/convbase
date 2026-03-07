@@ -5,7 +5,7 @@ default: all
 
 # Install development dependencies
 setup:
-    uv pip install -e .[dev]
+    uv sync
 
 # Lint and format the codebase
 lint:
@@ -14,7 +14,7 @@ lint:
 
 # Run tests with coverage
 test:
-    uv run pytest --cov=src/convbase --cov-branch -q
+    uv run pytest -q
 
 # Run type checker
 type:

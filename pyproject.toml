@@ -7,7 +7,7 @@ requires-python = ">=3.10"
 keywords = []
 authors = [{ name = "Kyle O'Malley", email = "j.kyle.omalley@gmail.com" }]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 5 - Production/Stable",
   "Environment :: Console",
   "Operating System :: OS Independent",
   "License :: OSI Approved :: MIT License",
@@ -33,6 +33,9 @@ oct = "convbase.cli:oct_cmd"
 dec = "convbase.cli:dec_cmd"
 hex = "convbase.cli:hex_cmd"
 
+
+[tool.pytest.ini_options]
+addopts = "--cov=convbase --cov-branch --cov-report=term-missing --cov-fail-under=100"
 
 [tool.ruff]
 fix = true

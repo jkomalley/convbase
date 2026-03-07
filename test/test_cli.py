@@ -52,3 +52,10 @@ def test_invalid_input_exits_nonzero(runner, cmd):
     result = runner.invoke(cmd, ["hello"])
     assert result.exit_code != 0
     assert "Invalid value" in result.output
+
+
+@pytest.mark.parametrize("cmd", [bin_cmd, oct_cmd, dec_cmd, hex_cmd])
+def test_version_flag(runner, cmd):
+    result = runner.invoke(cmd, ["--version"])
+    assert result.exit_code == 0
+    assert "version" in result.output
