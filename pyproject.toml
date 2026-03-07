@@ -20,7 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Topic :: Utilities",
 ]
-dependencies = ["click"]
+dependencies = ["click>=8.0"]
 
 [project.urls]
 Documentation = "https://github.com/jkomalley/convbase#readme"
@@ -28,10 +28,10 @@ Issues = "https://github.com/jkomalley/convbase/issues"
 Source = "https://github.com/jkomalley/convbase"
 
 [project.scripts]
-bin = "convbase.cli:bin"
-oct = "convbase.cli:oct"
-dec = "convbase.cli:dec"
-hex = "convbase.cli:hex"
+bin = "convbase.cli:bin_cmd"
+oct = "convbase.cli:oct_cmd"
+dec = "convbase.cli:dec_cmd"
+hex = "convbase.cli:hex_cmd"
 
 
 [tool.ruff]
@@ -41,10 +41,8 @@ fix = true
 line-ending = "lf"
 skip-magic-trailing-comma = true
 
-[tool.mypy]
-python_version = "3.10"
-warn_return_any = true
-warn_unused_configs = true
+[tool.ruff.lint]
+select = ["A001"]
 
 [build-system]
 requires = ["uv_build>=0.9.25,<0.10.0"]
