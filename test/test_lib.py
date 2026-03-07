@@ -31,3 +31,11 @@ def test_to_decimal(value, expected):
 )
 def test_to_hexadecimal(value, expected):
     assert lib.to_hexadecimal(value) == expected.lower()
+
+
+@pytest.mark.parametrize(
+    "func", [lib.to_binary, lib.to_octal, lib.to_decimal, lib.to_hexadecimal]
+)
+def test_invalid_input_raises_value_error(func):
+    with pytest.raises(ValueError):
+        func("hello")
