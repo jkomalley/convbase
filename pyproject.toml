@@ -35,6 +35,7 @@ hex = "convbase.cli:hex_cmd"
 
 
 [tool.pytest.ini_options]
+testpaths = ["tests"]
 addopts = "--cov=convbase --cov-branch --cov-report=term-missing --cov-fail-under=100"
 
 [tool.ruff]
