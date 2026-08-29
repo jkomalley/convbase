@@ -78,8 +78,8 @@ Error: Invalid value for 'VALUE': invalid integer: 'hello'
 ```bash
 git clone https://github.com/jkomalley/convbase
 cd convbase
-just setup
-just all       # lint, type-check, and test
+just install
+just check     # format, lint, type-check, and test
 ```
 
 ## License
