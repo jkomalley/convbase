@@ -39,14 +39,46 @@ testpaths = ["tests"]
 addopts = "--cov=convbase --cov-branch --cov-report=term-missing --cov-fail-under=100"
 
 [tool.ruff]
-fix = true
-
-[tool.ruff.format]
-line-ending = "lf"
-skip-magic-trailing-comma = true
+target-version = "py311"
+line-length = 88
 
 [tool.ruff.lint]
-select = ["A001"]
+select = ["ALL"]
+ignore = [
+    # --- Formatting / style clashes ---
+    "D203",   # one-blank-line-before-class (conflicts with D211)
+    "D213",   # multi-line-summary-second-line (conflicts with D212)
+    "D100",   # missing docstring in public module
+    "D104",   # missing docstring in public package
+    "D107",   # missing docstring in __init__ method
+
+    # --- Overly pedantic / noisy ---
+    "COM812", # missing trailing comma (conflicts with formatter)
+    "ISC001", # single-line implicit string concatenation (conflicts with formatter)
+    "FIX002", # line contains TODO
+    "TD002",  # missing author in TODO
+    "TD003",  # missing issue link in TODO
+    "ERA001", # found commented-out code
+    "TRY003", # avoid specifying long messages outside the exception class
+    "EM101",  # exception must not use a string literal
+    "EM102",  # exception must not use an f-string literal
+
+    # --- Pragmatic ignores ---
+    "S101",   # use of assert (needed in tests, fine in internal code)
+    "PLR2004",# magic value used in comparison
+    "CPY001", # missing copyright notice
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "D",      # no docstring requirements in tests
+    "ANN",    # no type annotation requirements in tests
+    "SLF001", # allow access to private members in tests
+    "INP001", # tests/ is a pytest rootdir-based test suite, not an importable package
+]
 
 [build-system]
 requires = ["uv_build>=0.9.25,<0.13.0"]
