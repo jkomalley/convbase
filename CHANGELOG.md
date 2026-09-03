@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-09-02
+
+### Added
+
+- The package now ships a `py.typed` marker and declares `Typing :: Typed`, so
+  downstream type checkers see convbase's inline annotations instead of
+  treating the package as untyped.
+- Full type annotations on the CLI command functions.
+
+### Changed
+
+- CLI `--help` text reworded to imperative mood ("Convert VALUE to binary"
+  rather than "Converts VALUE to binary") and reflowed. Behaviour is unchanged.
+- `click.BadParameter` is now raised with `from err`, so tracebacks retain the
+  underlying `ValueError` instead of discarding it.
+- Packaging metadata standardized: SPDX `license` field replacing the
+  deprecated `License ::` classifier, consistent `[project.urls]` keys, and
+  populated `keywords`.
+- Minimum Python raised to 3.11 (from 3.10, which reaches end of life in
+  October 2026).
+- Build requirement floor raised to `uv_build>=0.12.0,<0.13.0`.
+
+### Internal
+
+- Ruff configuration adopted the project-family standard (`select = ["ALL"]`
+  with a shared ignore list), resolving 29 violations.
+- Test directory renamed `test/` to `tests/`.
+- CI consolidated into one matrixed `check` job over Python 3.11-3.14 with a
+  `version-guard` job; type checking pinned to 3.14.
+- Release pipeline replaced: publishing now follows CI success on `main` and
+  creates the tag and GitHub release itself, rather than being triggered by a
+  manually created release.
+- Dependency updates grouped by ecosystem, with a new `pre-commit` ecosystem,
+  and minor/patch updates merged automatically.
+
 ## [1.0.0] - 2026-03-06
 
 ### Added
