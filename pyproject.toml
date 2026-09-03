@@ -1,6 +1,6 @@
 [project]
 name = "convbase"
-version = "1.0.0"
+version = "1.1.0"
 description = 'Base conversion command line utility.'
 readme = "README.md"
 requires-python = ">=3.11"
