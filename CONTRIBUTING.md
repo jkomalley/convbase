@@ -26,7 +26,7 @@ Or without `just`:
 
 ```bash
 uv sync                    # create the venv and install all dependencies
-uv run pre-commit install  # enable the git hooks
+uv run pre-commit install  # enable the pre-commit and pre-push git hooks
 ```
 
 ## Project layout
