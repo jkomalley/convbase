@@ -1,6 +1,7 @@
 # justfile for convbase project
 
 set shell := ["bash", "-c"]
+set positional-arguments
 
 # Show available recipes
 default:
@@ -13,7 +14,7 @@ install:
 
 # Run a convbase CLI command locally. Usage: just run hex 255
 run *args:
-    uv run {{args}}
+    uv run "$@"
 
 # Run tests (coverage and the 100% gate come from pyproject addopts)
 test:
