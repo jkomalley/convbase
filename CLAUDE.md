@@ -63,7 +63,7 @@ Key design decisions:
 - Every feature, fix, or other change gets its own branch and pull request — no direct commits to main.
 - Commits must be atomic and follow Conventional Commits (`feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `deps`, `style`): one logical change per commit.
 - PRs that resolve an issue reference it with `Closes #N` so it closes automatically on merge.
-- **PRs are rebase-merged.** Squash and merge commits are disabled at the repo level, for bots and humans alike.
+- **PRs are merged with a merge commit** — never squashed or rebased. Both break stacked PRs, and this project family works in stacks.
 - **Keep `CHANGELOG.md` release-ready.** Any user-facing change adds a bullet under `## [Unreleased]` in the same PR (internal-only refactors, CI, test, and docs changes are exempt). Entries follow the existing Keep a Changelog style — grouped under `### Added`/`### Changed`/`### Fixed`/`### Removed`, one line each.
 - **Releases are automated and notes come from the changelog — never hand-written commit dumps.** See CONTRIBUTING.md → Releasing.
 
