@@ -112,3 +112,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of `convbase`.
 - Specific command-line utilities for base conversion (e.g., `hextodec`, `bintooct`, etc.).
+
+[Unreleased]: https://github.com/jkomalley/convbase/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/jkomalley/convbase/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/jkomalley/convbase/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/jkomalley/convbase/compare/v0.2.2...v1.0.0
+[0.2.2]: https://github.com/jkomalley/convbase/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/jkomalley/convbase/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/jkomalley/convbase/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/jkomalley/convbase/releases/tag/v0.1.0
