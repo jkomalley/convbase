@@ -16,12 +16,13 @@ install:
 run *args:
     uv run "$@"
 
-# Run tests (coverage and the 100% gate come from pyproject addopts)
+# Run tests without the coverage gate
 test:
-    uv run pytest
+    uv run pytest --no-cov
 
-# Alias for cross-repo consistency; `just test` already enforces 100% coverage
-test-cov: test
+# Run tests with coverage and enforce 100% execution
+test-cov:
+    uv run pytest --cov --cov-fail-under=100
 
 # Check code formatting (for CI)
 format-check:
