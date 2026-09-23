@@ -1,6 +1,7 @@
 # justfile for convbase project
 
 set shell := ["bash", "-c"]
+set positional-arguments
 
 # Show available recipes
 default:
@@ -13,14 +14,15 @@ install:
 
 # Run a convbase CLI command locally. Usage: just run hex 255
 run *args:
-    uv run {{args}}
+    uv run "$@"
 
-# Run tests (coverage and the 100% gate come from pyproject addopts)
+# Run tests without the coverage gate
 test:
-    uv run pytest
+    uv run pytest --no-cov
 
-# Alias for cross-repo consistency; `just test` already enforces 100% coverage
-test-cov: test
+# Run tests with coverage and enforce 100% execution
+test-cov:
+    uv run pytest --cov --cov-fail-under=100
 
 # Check code formatting (for CI)
 format-check:
@@ -55,6 +57,11 @@ clean:
 lock-upgrade:
     #!/usr/bin/env bash
     set -euo pipefail
+
+    if [ -n "$(git status --porcelain -- pyproject.toml uv.lock)" ]; then
+        echo "pyproject.toml or uv.lock has uncommitted changes; aborting." >&2
+        exit 1
+    fi
 
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     if [ "$BRANCH" = "main" ]; then

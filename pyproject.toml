@@ -5,6 +5,7 @@ description = 'Base conversion command line utility.'
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["base conversion", "binary", "hexadecimal", "cli", "number"]
 authors = [{ name = "Kyle O'Malley", email = "j.kyle.omalley@gmail.com" }]
 classifiers = [
@@ -37,7 +38,29 @@ hex = "convbase.cli:hex_cmd"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=convbase --cov-branch --cov-report=term-missing --cov-fail-under=100"
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    # Coverage policy lives here, not in the CI step, so the CI `check` job
+    # stays byte-identical across repos. `--cov` bare is enough because
+    # [tool.coverage.run] sets source below.
+    "--cov",
+    "--cov-fail-under=100",
+]
+
+[tool.coverage.run]
+source = ["convbase"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.",
+]
 
 [tool.ruff]
 target-version = "py311"

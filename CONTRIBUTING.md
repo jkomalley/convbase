@@ -26,7 +26,7 @@ Or without `just`:
 
 ```bash
 uv sync                    # create the venv and install all dependencies
-uv run pre-commit install  # enable the git hooks
+uv run pre-commit install  # enable the pre-commit and pre-push git hooks
 ```
 
 ## Project layout
@@ -58,7 +58,8 @@ Or run individual tasks:
 just format     # ruff format src/ tests/
 just lint       # ruff check --fix src/ tests/
 just typecheck  # ty check src/
-just test       # pytest
+just test       # pytest, fast (no coverage)
+just test-cov   # pytest with the 100% coverage gate
 ```
 
 Each task maps to a plain `uv run …` command, so you can run them directly if
@@ -90,7 +91,7 @@ you'd rather not install `just`.
 - Branch off `main`; one logical change per PR.
 - Include tests for any new or changed behavior.
 - Make sure `just check` passes cleanly before you open the PR.
-- PRs are **rebase-merged**; squash and merge commits are disabled.
+- **PRs are merged with a merge commit** — not squashed, not rebased.
 
 CI runs the full check suite against Python 3.11–3.14 on every pull request.
 
