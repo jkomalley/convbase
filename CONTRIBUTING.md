@@ -125,7 +125,9 @@ most recent change.
 
 Release notes are taken from the matching `## [x.y.z]` section of
 `CHANGELOG.md`. **A missing section aborts the release before publishing**, so
-rename `## [Unreleased]` to `## [X.Y.Z] - <date>` in the same PR as the bump.
+rename `## [Unreleased]` to `## [X.Y.Z] - <date>` in the same PR as the bump,
+add a fresh empty `## [Unreleased]` above it, and update the compare links at
+the bottom of `CHANGELOG.md`.
 
 ## License
 
