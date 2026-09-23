@@ -12,11 +12,12 @@ It installs four console scripts — `bin`, `oct`, `dec`, `hex` — one per outp
 
 - **Install deps:** `just install` (`uv sync` + `uv run pre-commit install`)
 - **Run the CLI locally:** `just run hex 255` (`uv run hex 255`)
-- **Run tests:** `just test` (`uv run pytest`)
-- **Run single test:** `uv run pytest tests/test_lib.py::test_to_binary -v`
-- **Test with coverage (100% gate):** `just test-cov` — an alias for `just test`; the
-  coverage flags and the `--cov-fail-under=100` gate live in `[tool.pytest.ini_options]`
-  `addopts`, so every `pytest` run is already gated.
+- **Run tests (fast, no coverage):** `just test` (`uv run pytest --no-cov`)
+- **Run single test:** `uv run pytest --no-cov tests/test_lib.py::test_to_binary -v` —
+  the `--no-cov` is required, since the gate in `addopts` fails any partial run.
+- **Test with coverage (100% gate):** `just test-cov` (`uv run pytest --cov --cov-fail-under=100`);
+  plain `uv run pytest` is gated too, since the coverage flags live in
+  `[tool.pytest.ini_options]` `addopts`.
 - **Format:** `just format` (`uv run ruff format src/ tests/`)
 - **Format check:** `just format-check` (`uv run ruff format --check src/ tests/`)
 - **Lint (auto-fix):** `just lint` (`uv run ruff check --fix src/ tests/`)

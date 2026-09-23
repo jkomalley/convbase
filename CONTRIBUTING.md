@@ -58,7 +58,8 @@ Or run individual tasks:
 just format     # ruff format src/ tests/
 just lint       # ruff check --fix src/ tests/
 just typecheck  # ty check src/
-just test       # pytest
+just test       # pytest, fast (no coverage)
+just test-cov   # pytest with the 100% coverage gate
 ```
 
 Each task maps to a plain `uv run …` command, so you can run them directly if
