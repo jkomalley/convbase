@@ -5,6 +5,7 @@ description = 'Base conversion command line utility.'
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["base conversion", "binary", "hexadecimal", "cli", "number"]
 authors = [{ name = "Kyle O'Malley", email = "j.kyle.omalley@gmail.com" }]
 classifiers = [
